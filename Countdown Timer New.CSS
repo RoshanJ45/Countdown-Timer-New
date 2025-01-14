@@ -1,0 +1,19 @@
+    body {
+font-family: Arial, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+background: #1e1e2f;
+color: white;
+}
+.timer {
+text-align: center;
+font-size: 3rem;
+padding: 20px;
+border: 2px solid #fff;
+border-radius: 8px;
+background: linear-gradient(135deg, #4a90e2, #9013fe);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

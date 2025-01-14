@@ -1,0 +1,40 @@
+<div class="timer" id="timer">00:00:00</div>
+<style>
+    body {
+font-family: Arial, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+background: #1e1e2f;
+color: white;
+}
+.timer {
+text-align: center;
+font-size: 3rem;
+padding: 20px;
+border: 2px solid #fff;
+border-radius: 8px;
+background: linear-gradient(135deg, #4a90e2, #9013fe);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+</style>
+<script>
+    const targetTime = new Date().getTime() + 10 * 60 * 1000;
+function updateTimer() {
+const now = new Date().getTime();
+const timeLeft = targetTime - now;
+if (timeLeft <= 0) {
+document.getElementById("timer").textContent = "Time's up!";
+clearInterval(interval);
+return;
+}
+const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+document.getElementById("timer").textContent =
+`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+const interval = setInterval(updateTimer, 1000);
+updateTimer();
+</script>
